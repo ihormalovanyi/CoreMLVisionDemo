@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+//import Vision
 
 class MLVisionViewController: UIViewController {
 
@@ -17,10 +18,13 @@ class MLVisionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                         action: #selector(tap)))
+        
         domainModel = MLVisionDomainModel(for: self)
+        domainModel.delegate = self
+        
         resultLabel = createInfoLabel()
-        resultLabel.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                                action: #selector(tap)))
         view.addSubview(resultLabel)
     }
     
@@ -33,7 +37,7 @@ class MLVisionViewController: UIViewController {
         
         label.frame.size = CGSize(width: view.bounds.width - 30, height: view.bounds.height / 2 - 50)
         label.frame.origin = CGPoint(x: 15, y: view.bounds.height / 2)
-        label.isUserInteractionEnabled = true
+        
         label.numberOfLines = 3
         label.textAlignment = .left
         label.textColor = .white
@@ -45,8 +49,32 @@ class MLVisionViewController: UIViewController {
     
 }
 
+extension MLVisionViewController: MLVisionDomainModelDelegate {
+    
+    func visionDomainModel(visionDomainModel: MLVisionDomainModel, sentNewInfoByTimer: String) {
+        resultLabel.text = sentNewInfoByTimer
+    }
+    
+}
+
 extension MLVisionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {}
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+//        if let buffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+//            var requestOptions: [VNImageOption : Any] = [:]
+//            if let cameraIntrinsicData = CMGetAttachment(buffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
+//                requestOptions = [.cameraIntrinsics : cameraIntrinsicData]
+//            }
+            
+//            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: buffer, options: requestOptions)
+//            if let coreMLRequest = domainModel.coreMLRequests {
+//                do {
+//                    try imageRequestHandler.perform([coreMLRequest])
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//        }
+    }
     
 }

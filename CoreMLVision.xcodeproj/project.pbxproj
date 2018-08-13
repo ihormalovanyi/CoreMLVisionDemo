@@ -12,6 +12,8 @@
 		58584EDA211E384F00A64C21 /* MLVisionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58584ED9211E384F00A64C21 /* MLVisionViewController.swift */; };
 		58584EDF211E384F00A64C21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58584EDE211E384F00A64C21 /* Assets.xcassets */; };
 		58584EE2211E384F00A64C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58584EE0211E384F00A64C21 /* LaunchScreen.storyboard */; };
+		58584EEA211E414E00A64C21 /* ImageClassifierDemo.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 58584EE9211E414D00A64C21 /* ImageClassifierDemo.mlmodel */; };
+		58584EEC211E55C300A64C21 /* MLVisionFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58584EEB211E55C300A64C21 /* MLVisionFlow.swift */; };
 		58584EEE211E655800A64C21 /* VideoCapturingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58584EED211E655800A64C21 /* VideoCapturingFlow.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +25,10 @@
 		58584EDE211E384F00A64C21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58584EE1211E384F00A64C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58584EE3211E384F00A64C21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58584EE9211E414D00A64C21 /* ImageClassifierDemo.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifierDemo.mlmodel; sourceTree = "<group>"; };
+		58584EEB211E55C300A64C21 /* MLVisionFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLVisionFlow.swift; sourceTree = "<group>"; };
 		58584EED211E655800A64C21 /* VideoCapturingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapturingFlow.swift; sourceTree = "<group>"; };
+		588FC098211F1EF5005BBBE3 /* ImageClassifierTrainer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ImageClassifierTrainer.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +64,10 @@
 				58584ED7211E384F00A64C21 /* AppDelegate.swift */,
 				58584ED9211E384F00A64C21 /* MLVisionViewController.swift */,
 				5813CFEF211EDA3A005E1617 /* MLVisionDomainModel.swift */,
+				58584EEB211E55C300A64C21 /* MLVisionFlow.swift */,
 				58584EED211E655800A64C21 /* VideoCapturingFlow.swift */,
+				58584EE9211E414D00A64C21 /* ImageClassifierDemo.mlmodel */,
+				588FC098211F1EF5005BBBE3 /* ImageClassifierTrainer.playground */,
 				58584EDE211E384F00A64C21 /* Assets.xcassets */,
 				58584EE0211E384F00A64C21 /* LaunchScreen.storyboard */,
 				58584EE3211E384F00A64C21 /* Info.plist */,
@@ -140,6 +148,8 @@
 				58584EDA211E384F00A64C21 /* MLVisionViewController.swift in Sources */,
 				58584ED8211E384F00A64C21 /* AppDelegate.swift in Sources */,
 				5813CFF0211EDA3A005E1617 /* MLVisionDomainModel.swift in Sources */,
+				58584EEC211E55C300A64C21 /* MLVisionFlow.swift in Sources */,
+				58584EEA211E414E00A64C21 /* ImageClassifierDemo.mlmodel in Sources */,
 				58584EEE211E655800A64C21 /* VideoCapturingFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
