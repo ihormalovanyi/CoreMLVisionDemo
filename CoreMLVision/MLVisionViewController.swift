@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-//import Vision
+import Vision
 
 class MLVisionViewController: UIViewController {
 
@@ -60,21 +60,21 @@ extension MLVisionViewController: MLVisionDomainModelDelegate {
 extension MLVisionViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-//        if let buffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
-//            var requestOptions: [VNImageOption : Any] = [:]
-//            if let cameraIntrinsicData = CMGetAttachment(buffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
-//                requestOptions = [.cameraIntrinsics : cameraIntrinsicData]
-//            }
+        if let buffer = CMSampleBufferGetImageBuffer(sampleBuffer) {
+            var requestOptions: [VNImageOption : Any] = [:]
+            if let cameraIntrinsicData = CMGetAttachment(buffer, key: kCMSampleBufferAttachmentKey_CameraIntrinsicMatrix, attachmentModeOut: nil) {
+                requestOptions = [.cameraIntrinsics : cameraIntrinsicData]
+            }
             
-//            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: buffer, options: requestOptions)
-//            if let coreMLRequest = domainModel.coreMLRequests {
-//                do {
-//                    try imageRequestHandler.perform([coreMLRequest])
-//                } catch {
-//                    print(error)
-//                }
-//            }
-//        }
+            let imageRequestHandler = VNImageRequestHandler(cvPixelBuffer: buffer, options: requestOptions)
+            if let coreMLRequest = domainModel.coreMLRequests {
+                do {
+                    try imageRequestHandler.perform([coreMLRequest])
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
 }
