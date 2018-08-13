@@ -39,7 +39,7 @@ final class MLVisionDomainModel {
     var foundCategoriesTextRepresentation: String {
         var finalString = "Nothing founded"
         if let foundCategories = foundCategories {
-            finalString = foundCategories.map { "\($0.identifier) - \(String(format: "%.2f", $0.confidence))%" }.joined(separator: "\n")
+            finalString = foundCategories.map { "\($0.identifier) - \(String(format: "%.2f", $0.confidence * 100))%" }.joined(separator: "\n")
         }
         return finalString
     }
